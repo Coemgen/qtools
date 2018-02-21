@@ -1,0 +1,35 @@
+name: q_tools
+description: Tools for QCodefag.github.io
+version: 0.0.1
+#homepage: https://www.example.com
+author: qcodefag <qcodefag@protonmail.com>
+
+environment:
+  sdk: '>=1.20.1 <2.0.0'
+
+dependencies:
+  reflectable: any
+  browser: any
+  intl: any
+  dart_to_js_script_rewriter: any
+  http: any
+  html: any
+  crypto: any
+  git: any
+  shelf_route: any
+  shelf_auth: any
+  shelf_cors: any
+
+dev_dependencies:
+  test: any
+
+transformers:
+- dart_to_js_script_rewriter
+- reflectable:
+    entry_points:
+      - test/serialize.dart
+    formatted: true # Optional.
+
+web:
+  compiler:
+    debug: dartdevc
